@@ -2,15 +2,22 @@ export const initNav = () => {
     const body = document.querySelector('body');
     // Меню
     const mobileMenu = document.querySelector('.mobile-menu');
-    const menuButtons = document.querySelectorAll('.btn-close-menu');
+    const mobileMenuCatalog = document.querySelector('.mobile-menu-catalog');
+    const menuButtons = document.querySelector('.btn-close-menu');
+    const menuButtons2 = document.querySelector('.btn-close-menu-2');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 
-    menuButtons.forEach((menuButton) => {
-        menuButton.addEventListener('click', e => {
-            menuButton.classList.toggle('active');
-            mobileMenu.classList.toggle('is-active');
-            // body.classList.toggle('lock');
-        });
+
+    menuButtons.addEventListener('click', e => {
+        menuButtons.classList.toggle('active');
+        mobileMenuCatalog.classList.toggle('is-active');
+        // body.classList.toggle('lock');
+    });
+
+    menuButtons2.addEventListener('click', e => {
+        menuButtons2.classList.toggle('active');
+        mobileMenu.classList.toggle('is-active');
+        // body.classList.toggle('lock');
     });
 
     mobileMenuLinks.forEach(link => {

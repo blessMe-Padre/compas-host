@@ -64,7 +64,7 @@
                         </svg>
                         <span>Каталог</span>
                     </button>
-                    <button class="btn-close-menu sm:hidden">
+                    <button class="btn-close-menu btn-close-menu-2 sm:hidden">
                         <svg viewBox="0 0 64 48">
                             <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
                             <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
@@ -74,32 +74,15 @@
                     </button>
 
                     <nav class="header-nav">
-                        <ul>
-                            <li>
-                                <a class="text-dark-blue font-medium transition-colors hover:text-blue" href="#">О
-                                    компании</a>
-                            </li>
-                            <li>
-                                <a class="text-dark-blue font-medium transition-colors hover:text-blue"
-                                    href="#">Партнеры</a>
-                            </li>
-                            <li>
-                                <a class="text-dark-blue font-medium transition-colors hover:text-blue"
-                                    href="#">Отзывы</a>
-                            </li>
-                            <li>
-                                <a class="text-dark-blue font-medium transition-colors hover:text-blue" href="#">Как
-                                    купить</a>
-                            </li>
-                            <li>
-                                <a class="text-dark-blue font-medium transition-colors hover:text-blue"
-                                    href="#">Полезное</a>
-                            </li>
-                            <li>
-                                <a class="text-dark-blue font-medium transition-colors hover:text-blue"
-                                    href="#">Контакты</a>
-                            </li>
-                        </ul>
+
+                        <?php wp_nav_menu([
+                            'theme_location' => 'top',
+                            'container' => '',
+                            'menu_class' => '',
+                            'menu_id' => ''
+                        ]);
+                        ?>
+
                         <div class="header-form-mobile-wrapper">
                             <form action="#">
                                 <button>
@@ -111,36 +94,26 @@
                         </div>
                     </nav>
 
-                    <div class="flex flex-col items-start justify-between pt-20 overflow-hidden">
+                    <div class="flex flex-col items-start justify-between pt-20 overflow-hidden sm:hidden">
                         <div class="mobile-menu">
-                            <ul>
-                                <li><a href="#">О нас</a>
-                                </li>
-                                <li><a href="#">Одежда</a>
-                                </li>
-                                <li><a href="#">Головные уборы 1</a>
-                                </li>
-                                <li><a href="#">Головные уборы 2</a>
-                                </li>
-                                <li><a href="#">Головные уборы3 </a>
-                                </li>
-                                <li><a href="#">Головные уборы 4</a>
-                                </li>
-                                <li><a href="#">Головные уборы 5</a>
-                                </li>
-                                <li><a href="#">Головные уборы 6</a>
-                                </li>
-                                <li><a href="#">Головные уборы 7</a>
-                                </li>
-                                <li><a href="#">Головные уборы 8</a>
-                                </li>
-                                <li><a href="#">Головные уборы 9</a>
-                                </li>
-                                <li><a href="#">Головные уборы 10</a>
-                                </li>
-                                <li><a href="#">Головные уборы 11</a>
-                                </li>
-                            </ul>
+                            <?php wp_nav_menu([
+                                'theme_location' => 'mobile-menu',
+                                'container' => '',
+                                'menu_class' => '',
+                                'menu_id' => ''
+                            ]);
+                            ?>
+                        </div>
+                    </div>
+                    <div class="flex-col items-start justify-between pt-20 overflow-hidden hidden sm:flex">
+                        <div class="mobile-menu mobile-menu-catalog">
+                            <?php wp_nav_menu([
+                                'theme_location' => 'catalog-menu',
+                                'container' => '',
+                                'menu_class' => '',
+                                'menu_id' => ''
+                            ]);
+                            ?>
                         </div>
                     </div>
                 </div>
