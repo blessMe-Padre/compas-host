@@ -1,0 +1,113 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+/* Импорт кастомных стилей для компонентов */
+@import './block/button.css';
+@import './block/menu-button.css';
+@import './block/menu.css';
+@import './block/swiper.css';
+@import './block/sliders.css';
+@import './block/decor.css';
+@import './block/scrool-top.css';
+@import './block/header.css';
+@import './block/footer.css';
+@import './block/hero.css';
+@import './block/catalog.css';
+@import './block/contact.css';
+@import './block/card.css';
+@import './block/popup.css';
+@import './block/form.css';
+
+/* Импорт TailWind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Зарегистрируйте пользовательское семейство шрифтов и сообщите браузеру, где его найти. */
+/* @font-face {
+    font-family: 'archangelsk';
+    src: url('../src/fonts/archangelsk.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: 'Ubuntu', sans-serif;
+        color: #262626;
+        background: linear-gradient(166deg, #FFF 5.27%, rgba(255, 255, 255, 0.00) 78.75%);
+        font-weight: 400;
+    }
+}
+
+@layer components {
+    .container {
+        @apply max-w-[1440px]
+    }
+}
+
+/* Директивы классов */
+
+.header-call-button {
+    @apply py-3 px-8 bg-main-black font-bodyFont uppercase rounded-xl text-white w-44 text-center border-solid border-main-black border-[2px] transition-all block;
+}
+
+.header-call-button:hover {
+    background-color: transparent;
+    color: #262626;
+}
+
+.nav-link {
+    @apply text-lg uppercase hover:text-blue transition-colors;
+}
+
+/* Прочие классы */
+
+.lock {
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.link {
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #81B8F9;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: #C4C4C4;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #4466B6;
+    border-radius: 9em;
+    /* box-shadow: inset 1px 1px 10px #f3faf7; */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #253861;
+}
