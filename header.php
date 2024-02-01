@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="h-screen grid grid-rows-[auto_1fr_auto]">
+    <div class="h-screen grid grid-rows-[auto_1fr_auto] wrapper">
         <header class="z-10 w-full md-28 transition-colors">
             <div class="container">
 

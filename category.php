@@ -112,7 +112,8 @@ get_header();
                                     <?php the_title(); ?>
                                 </p>
                             </div>
-                            <a class="flex items-center justify-between gap-3 catalog__content-link" href="">
+                            <a class="flex items-center justify-between gap-3 catalog__content-link"
+                                href="<?php the_permalink(); ?>">
                                 <span class="text-base sm:text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
                                     height="21" alt="заказать">
