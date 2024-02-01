@@ -2,7 +2,7 @@
 /*
 Template Name: Главная страница
 */
-	get_header();
+get_header();
 ?>
 <main>
     <h1 class="visually-hidden">Спецодежда во Владивостоке</h1>
@@ -18,71 +18,38 @@ Template Name: Главная страница
         <div class="container">
             <h2 class="h2-title mb-8">Каталог</h2>
             <ul class="catalog__list">
-                <li class="catalog__item">
-                    <a href="#">
-                        <div class="catalog__img">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                height="260" alt="image">
-                        </div>
-                        <div class="catalog__item-wrapper">
-                            <span>[</span>
-                            <p>одежда</p>
-                            <span>]</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="catalog__item">
-                    <a href="#">
-                        <div class="catalog__img">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                height="260" alt="image">
-                        </div>
-                        <div class="catalog__item-wrapper">
-                            <span>[</span>
-                            <p>одежда</p>
-                            <span>]</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="catalog__item">
-                    <a href="#">
-                        <div class="catalog__img">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                height="260" alt="image">
-                        </div>
-                        <div class="catalog__item-wrapper">
-                            <span>[</span>
-                            <p>одежда</p>
-                            <span>]</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="catalog__item">
-                    <a href="#">
-                        <div class="catalog__img">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                height="260" alt="image">
-                        </div>
-                        <div class="catalog__item-wrapper">
-                            <span>[</span>
-                            <p>одежда</p>
-                            <span>]</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="catalog__item">
-                    <a href="#">
-                        <div class="catalog__img">
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                height="260" alt="image">
-                        </div>
-                        <div class="catalog__item-wrapper">
-                            <span>[</span>
-                            <p>одежда</p>
-                            <span>]</span>
-                        </div>
-                    </a>
-                </li>
+
+                <?php
+                $args = array(
+                    'parent' => 0 // Получаем только родительские категории
+                );
+                $categories = get_categories($args); // Получаем список категорий
+                foreach ($categories as $category) { // Перебираем каждую категорию
+                    $category_link = get_category_link($category->term_id); // Получаем ссылку на категорию
+                    $category_name = $category->name; // Получаем название категории
+                    ?>
+
+                    <li class="catalog__item">
+                        <a href="<?php echo esc_url($category_link); ?>">
+                            <div class="catalog__img">
+                                <!-- Здесь можно добавить изображение для категории, если оно есть -->
+                                <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
+                                    height="260" alt="image">
+                            </div>
+                            <div class="catalog__item-wrapper">
+                                <span>[</span>
+                                <p>
+                                    <?php echo esc_html($category_name); ?>
+                                </p>
+                                <span>]</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <?php
+                }
+                ?>
+
             </ul>
         </div>
     </section>

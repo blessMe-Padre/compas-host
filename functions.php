@@ -1,4 +1,6 @@
 <?php
+
+
 // правильный способ подключить стили и скрипты темы
 add_action('wp_enqueue_scripts', 'theme_add_scripts');
 
