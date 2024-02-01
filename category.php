@@ -103,14 +103,16 @@ get_header();
                         the_post();
                         ?>
                         <li class="catalog__content-item" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-                            <div class="py-4 px-7">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480" height="600"
-                                    alt="новинка">
+                            <div>
+                                <div class="py-4 px-7">
+                                    <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
+                                        height="600" alt="новинка">
+                                </div>
+                                <p class="text-xs sm:text-lg text-gray pb-3">
+                                    <?php the_title(); ?>
+                                </p>
                             </div>
-                            <p class="text-xs sm:text-lg text-gray pb-3 mb-5 border-b-[1px] border-gray ">
-                                <?php the_title(); ?>
-                            </p>
-                            <a class="flex items-center justify-between gap-3 " href="">
+                            <a class="flex items-center justify-between gap-3 catalog__content-link" href="">
                                 <span class="text-base sm:text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
                                     height="21" alt="заказать">

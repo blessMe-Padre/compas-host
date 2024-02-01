@@ -2865,3 +2865,15 @@ body {
     display: none;
   }
 }
+
+.catalog__content-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.catalog__content-link {
+  padding-top: 5px;
+  border-top: 1px solid gray;
+}
