@@ -16,13 +16,8 @@
             <div class="container">
 
                 <div class=" gap-5 items-center justify-between flex mb-5 pt-2">
-                    <div class="w-[150px] sm:w-full">
-                        <!-- <img class="w-[150px] sm:w-full" loading="lazy"
-                            src="<?php echo get_template_directory_uri() ?>/src/img/logo.png" width="490" height="117"
-                            alt="лого"> -->
-                        <a href="<?= home_url(); ?>">
-                            <?php the_custom_logo(); ?>
-                        </a>
+                    <div class="header-logo">
+                        <?php the_custom_logo(); ?>
                     </div>
                     <form action="#" class="header-search-form hidden md:flex">
                         <button>

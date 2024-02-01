@@ -38,7 +38,7 @@ get_header();
                             </div>
                             <div class="catalog__item-wrapper">
                                 <span>[</span>
-                                <p>
+                                <p class="text-sm sm:text-lg">
                                     <?php echo esc_html($category_name); ?>
                                 </p>
                                 <span>]</span>
@@ -67,76 +67,52 @@ get_header();
             <div class="w-0 min-w-[100%]">
                 <div class="new-swiper swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="py-4 px-7">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
-                                    height="600" alt="новинка">
+
+                        <?php
+                        $my_posts = get_posts(
+                            array(
+                                'numberposts' => -1,
+                                'category' => 122,
+                                'orderby' => 'title',
+                                'order' => 'ASC',
+                                'post_type' => 'post',
+                                'suppress_filters' => true,
+                            )
+                        );
+
+                        foreach ($my_posts as $post) {
+                            setup_postdata($post);
+                            ?>
+
+                            <div class="swiper-slide new-item">
+                                <div>
+                                    <div class="py-4 px-7">
+                                        <?php
+                                        $photos = get_field('product_img');
+                                        if ($photos) {
+                                            $first_photo = reset($photos); // Получаем первое изображение
+                                            echo '<img class="object-cover" src="' . esc_url($first_photo['url']) . '" alt="">';
+                                        } else {
+                                            echo 'No photos found.';
+                                        }
+                                        ?>
+                                        <!-- <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
+                                            height="600" alt="новинка"> -->
+                                    </div>
+                                    <p class="text-xs sm:text-lg text-gray pb-3">
+                                        <?php the_title(); ?>
+                                    </p>
+                                </div>
+                                <a class="flex items-center justify-between gap-3 new-item-link"
+                                    href="<?php the_permalink(); ?>">
+                                    <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
+                                </a>
                             </div>
-                            <p class="text-xs sm:text-lg text-gray pb-3 mb-5 border-b-[1px] border-gray ">Куртка
-                                «ЕВРОПА»,
-                                красная с чёрным</p>
-                            <a class="flex items-center justify-between gap-3 " href="">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
-                                    height="21" alt="заказать">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="py-4 px-7">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
-                                    height="600" alt="новинка">
-                            </div>
-                            <p class="text-xs sm:text-lg text-gray pb-3 mb-5 border-b-[1px] border-gray ">Куртка
-                                «ЕВРОПА»,
-                                красная с чёрным</p>
-                            <a class="flex items-center justify-between gap-3 " href="">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
-                                    height="21" alt="заказать">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="py-4 px-7">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
-                                    height="600" alt="новинка">
-                            </div>
-                            <p class="text-xs sm:text-lg text-gray pb-3 mb-5 border-b-[1px] border-gray ">Куртка
-                                «ЕВРОПА»,
-                                красная с чёрным</p>
-                            <a class="flex items-center justify-between gap-3 " href="">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
-                                    height="21" alt="заказать">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="py-4 px-7">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
-                                    height="600" alt="новинка">
-                            </div>
-                            <p class="text-xs sm:text-lg text-gray pb-3 mb-5 border-b-[1px] border-gray ">Куртка
-                                «ЕВРОПА»,
-                                красная с чёрным</p>
-                            <a class="flex items-center justify-between gap-3 " href="">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
-                                    height="21" alt="заказать">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="py-4 px-7">
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
-                                    height="600" alt="новинка">
-                            </div>
-                            <p class="text-xs sm:text-lg text-gray pb-3 mb-5 border-b-[1px] border-gray ">Куртка
-                                «ЕВРОПА»,
-                                красная с чёрным</p>
-                            <a class="flex items-center justify-between gap-3 " href="">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
-                                    height="21" alt="заказать">
-                            </a>
-                        </div>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                        ?>
+
                     </div>
                 </div>
 

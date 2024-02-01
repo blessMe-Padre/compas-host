@@ -2866,14 +2866,26 @@ body {
   }
 }
 
-.catalog__content-item {
+.catalog__content-item,
+.new-item {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.catalog__content-link {
+.catalog__content-link,
+.new-item-link {
   padding-top: 5px;
   border-top: 1px solid gray;
+}
+
+.new-item img {
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.header-logo img {
+  width: 100%;
+  object-fit: cover;
 }
