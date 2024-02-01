@@ -96,9 +96,7 @@ get_header();
             <ul class="catalog__content">
                 <!-- content -->
                 <?php
-                // проверяем есть ли посты в глобальном запросе - переменная $wp_query
                 if (have_posts()) {
-                    // перебираем все имеющиеся посты и выводим их
                     while (have_posts()) {
                         the_post();
                         ?>
@@ -124,25 +122,34 @@ get_header();
                     ?>
                 </ul>
 
-                <div class="navigation">
-                    <div class="next-posts">
-                        <?php next_posts_link(); ?>
-                    </div>
-                    <div class="prev-posts">
-                        <?php previous_posts_link(); ?>
-                    </div>
-                </div>
-
+            </div>
+            <div class="navigation">
                 <?php
+                global $wp_query;
+
+                $big = 999999999; // нужно большое число
+                $current = max(1, get_query_var('paged'));
+
+                echo paginate_links(
+                    array(
+                        'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                        'format' => '?paged=%#%',
+                        'current' => $current,
+                        'total' => $wp_query->max_num_pages,
+                        'prev_text' => '←',
+                        'next_text' => '→',
+                    )
+                );
+                ?>
+            </div>
+            <?php
                 }
                 // постов нет
                 else {
                     echo "<h2>Записей нет.</h2>";
                 }
                 ?>
-            </ul>
-        </div>
-
+        <!-- /container -->
     </div>
 
 

@@ -15,32 +15,28 @@
 
             <div class="footer__section">
                 <h3 class="font-bold uppercase mb-5">каталог</h3>
-                <ul class="footer__list footer__list--columns">
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                    <li><a href="#">Летняя спецодежда</a></li>
-                </ul>
+                <div class="footer__list footer__list--columns">
+                    <?php wp_nav_menu([
+                        'theme_location' => 'catalog-footer',
+                        'container' => '',
+                        'menu_class' => '',
+                        'menu_id' => ''
+                    ]);
+                    ?>
+                </div>
             </div>
 
             <div class="footer__section-2">
                 <h3 class="font-bold uppercase mb-5">клиентам</h3>
-                <ul class="footer__list">
-                    <li><a href="#">О комнании</a></li>
-                    <li><a href="#">Партнеры</a></li>
-                    <li><a href="#">Отзывы</a></li>
-                    <li><a href="#">Как купить</a></li>
-                    <li><a href="#">Полезное</a></li>
-                    <li><a href="#">Контакты</a></li>
-                </ul>
+                <div class="footer__list">
+                    <?php wp_nav_menu([
+                        'theme_location' => 'footer-menu',
+                        'container' => '',
+                        'menu_class' => '',
+                        'menu_id' => ''
+                    ]);
+                    ?>
+                </div>
             </div>
 
             <div class="footer__section-3">
