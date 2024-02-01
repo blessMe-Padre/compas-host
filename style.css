@@ -2902,3 +2902,17 @@ body {
   color: #4466B6;
   font-weight: 600;
 }
+
+.form-field input {
+  border-bottom: 1px solid #6B6B6B;
+}
+
+.wpmtst-testimonial-inner.testimonial-inner {
+  background-color: #F6F6F6;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.wpmtst-testimonial-content.testimonial-content {
+  margin-bottom: 20px;
+}
