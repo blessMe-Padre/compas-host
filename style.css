@@ -942,7 +942,7 @@ button.swiper-pagination-bullet {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   border-bottom: 1px solid #6B6B6B;
 }
 
@@ -951,6 +951,13 @@ button.swiper-pagination-bullet {
   font-size: 20px;
   color: #6B6B6B;
   padding: 10px 5px;
+}
+
+@media (max-width: 767px) {
+  .header-search-form input {
+    padding: 0 10px;
+  }
+
 }
 
 .header-nav {
@@ -962,7 +969,7 @@ button.swiper-pagination-bullet {
   flex-wrap: wrap;
   align-items: center;
   justify-items: center;
-  gap: 30px;
+  gap: 10px;
 }
 
 .header-nav li {
@@ -982,10 +989,6 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width:1023px) {
-  .header-nav ul {
-    gap: 20px;
-  }
-
   .header-nav li a {
     font-size: 14px;
   }
@@ -1086,7 +1089,7 @@ button.swiper-pagination-bullet {
   padding-bottom: 10px;
   border-bottom: 1px solid #22253C;
   margin-left: 30px;
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 @media (min-width:1023px) {
@@ -1095,7 +1098,12 @@ button.swiper-pagination-bullet {
   }
 }
 
-.footer {}
+@media (min-width:767px) {
+  .header-form-mobile-wrapper form {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
 
 .footer__list--columns {
   -moz-column-count: 2;
@@ -2915,4 +2923,22 @@ body {
 
 .wpmtst-testimonial-content.testimonial-content {
   margin-bottom: 20px;
+}
+
+.search-title {
+  margin-bottom: 40px;
+}
+
+.search-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 30px;
+}
+
+.search-item img {
+  margin: 0 auto;
+}
+
+.inner-page-main {
+  padding: 40px 0;
 }
