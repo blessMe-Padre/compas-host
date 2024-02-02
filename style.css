@@ -2946,3 +2946,7 @@ body {
 .inner-page-main {
   padding: 40px 0;
 }
+
+.dataTables_wrapper {
+  max-width: 90vw;
+}
