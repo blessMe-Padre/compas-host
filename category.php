@@ -8,89 +8,26 @@ get_header();
         <div class="breadcrums py-7">
             <ul class="flex gap-3">
                 <li><a class="text-xs text-light-gray" href="/">Главная ></a></li>
-                <li><a class="text-xs text-light-gray" href="#">Каталог ></a></li>
-                <li><span class="text-xs " href="#">Летняя спецодежда </span></li>
+                <li><a class="text-xs text-light-gray" href="/category">Каталог ></a></li>
+                <li><span class="text-xs " href="#">
+                        <?php single_cat_title(); ?>
+                    </span></li>
             </ul>
         </div>
         <div class="catalog__wrapper py-10 relative">
             <!-- sidebar -->
-            <button class="catalog-menu-button">
-                <span>Категории</span>
-                <img src="./src/img/arrow-up.svg" alt="свернуть">
-            </button>
+
             <div class="catalog-form__sidebar">
                 <nav class="catalog-menu">
-                    <ul class="menu">
-                        <li>
-                            <a href="#">Новинки</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="#">Костюмы</a>
-                                </li>
-                                <li>
-                                    <a href="#">Халаты</a>
-                                </li>
-                                <li>
-                                    <a href="#">Фартуки</a>
-                                </li>
-                                <li>
-                                    <a href="#">Головные уборы</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Одежда</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="#">Костюмы зимние</a>
-                                </li>
-                                <li>
-                                    <a href="#">Куртки зимние</a>
-                                </li>
-                                <li>
-                                    <a href="#">Меховая одежда</a>
-                                </li>
-                                <li>
-                                    <a href="#">Полукомбинезоны</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Одежда</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="#">Костюмы зимние</a>
-                                </li>
-                                <li>
-                                    <a href="#">Куртки зимние</a>
-                                </li>
-                                <li>
-                                    <a href="#">Меховая одежда</a>
-                                </li>
-                                <li>
-                                    <a href="#">Полукомбинезоны</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="#">Одежда</a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a href="#">Костюмы зимние</a>
-                                </li>
-                                <li>
-                                    <a href="#">Куртки зимние</a>
-                                </li>
-                                <li>
-                                    <a href="#">Меховая одежда</a>
-                                </li>
-                                <li>
-                                    <a href="#">Полукомбинезоны</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    <?php wp_nav_menu([
+                        'theme_location' => 'side-bar-menu',
+                        'container' => '',
+                        'menu_class' => 'menu',
+                        'menu_id' => ''
+                    ]);
+                    ?>
                 </nav>
+
             </div>
 
             <ul class="catalog__content">
@@ -146,7 +83,7 @@ get_header();
                 }
                 // постов нет
                 else {
-                    echo "<h2>Записей нет.</h2>";
+                    echo "<h2>Товаров не найдено.</h2>";
                 }
                 ?>
         <!-- /container -->

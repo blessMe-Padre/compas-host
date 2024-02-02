@@ -46,5 +46,6 @@ function add_menu()
     register_nav_menu('catalog-menu', 'каталог-меню');
     register_nav_menu('catalog-footer', 'каталог-футер');
     register_nav_menu('footer-menu', 'футер-меню');
+    register_nav_menu('side-bar-menu', 'сайдбар меню');
 }
 ?>

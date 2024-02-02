@@ -1319,6 +1319,7 @@ button.swiper-pagination-bullet {
 .menu>li {
   padding: 10px 20px;
   border-radius: 10px;
+  position: relative;
 }
 
 .menu>li>a {
@@ -1347,15 +1348,6 @@ button.swiper-pagination-bullet {
   z-index: 10;
 }
 
-.sub-menu {
-  /* max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  will-change: max-height;
-  transition: all 0.3s ease;
-  box-sizing: border-box; */
-}
-
 .sub-menu.is-active {
   opacity: 1;
 }
@@ -1363,6 +1355,28 @@ button.swiper-pagination-bullet {
 .sub-menu li {
   padding: 5px 0;
 }
+
+/* сайдбар на странице категории */
+
+.catalog-menu .sub-menu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  will-change: max-height;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  transform: none;
+  transform-origin: unset;
+  position: static;
+  padding-left: 20px;
+}
+
+.catalog-menu .sub-menu.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* /сайдбар на странице категории */
 
 .catalog__wrapper {
   display: grid;
@@ -1428,8 +1442,6 @@ button.swiper-pagination-bullet {
     gap: 20px;
   }
 }
-
-.contact {}
 
 .contact__wrapper {
   display: grid;
@@ -2620,14 +2632,6 @@ body {
 }
 
 /* Зарегистрируйте пользовательское семейство шрифтов и сообщите браузеру, где его найти. */
-
-/* @font-face {
-    font-family: 'archangelsk';
-    src: url('src/fonts/archangelsk.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-} */
 
 /* Директивы классов */
 
