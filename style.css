@@ -1317,7 +1317,7 @@ button.swiper-pagination-bullet {
 /* sidebar */
 
 .menu>li {
-  padding: 10px 20px;
+  padding: 10px 30px 10px 20px;
   border-radius: 10px;
   position: relative;
 }
@@ -1345,7 +1345,7 @@ button.swiper-pagination-bullet {
 }
 
 .menu>li {
-  z-index: 10;
+  /* z-index: 10; */
 }
 
 .sub-menu.is-active {

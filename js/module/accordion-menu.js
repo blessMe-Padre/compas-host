@@ -8,6 +8,7 @@ export const initAccordionMenu = () => {
         button.addEventListener('click', (evt) => {
             evt.preventDefault();
 
+
             const currentButton = evt.currentTarget;
             currentButton.classList.toggle('is-active');
             content.classList.toggle('is-active');
@@ -20,4 +21,14 @@ export const initAccordionMenu = () => {
 
         });
     });
+
+    const sidebarButton = document.querySelector('.catalog-menu-button');
+    const sidebarContent = document.querySelector('.catalog-form__sidebar');
+
+    if (sidebarButton) {
+        sidebarButton.addEventListener('click', () => {
+            sidebarButton.classList.toggle('is-active');
+            sidebarContent.classList.toggle('is-active');
+        });
+    }
 }

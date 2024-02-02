@@ -17,6 +17,11 @@ get_header();
         <div class="catalog__wrapper py-10 relative">
             <!-- sidebar -->
 
+            <button class="catalog-menu-button">
+                <span>категории</span>
+                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-up.svg" alt="">
+            </button>
+
             <div class="catalog-form__sidebar">
                 <nav class="catalog-menu">
                     <?php wp_nav_menu([
