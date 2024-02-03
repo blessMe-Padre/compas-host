@@ -8,7 +8,7 @@
                     <p class="font-medium">Компания "Компас-СП" </p>
                     <p>Все права защищены</p>
                 </div>
-                <a class="font-light underline mt-32 hidden lg:block link" href="#" target="_blank"
+                <a class="font-light underline mt-32 hidden lg:block link" href="/policy" target="_blank"
                     rel="noopener noreferrer">Политика
                     конфиденциальности</a>
             </div>
@@ -56,7 +56,7 @@
                 </ul>
             </div>
 
-            <a class="font-light underline lg:hidden footer__policy link" href="#" target="_blank"
+            <a class="font-light underline lg:hidden footer__policy link" href="/policy" target="_blank"
                 rel="noopener noreferrer">Политика
                 конфиденциальности</a>
         </div>

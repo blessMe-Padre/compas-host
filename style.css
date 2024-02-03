@@ -921,9 +921,9 @@ button.swiper-pagination-bullet {
   width: 40px;
   height: 40px;
   padding: 5px;
-  color: #D1D618;
-  border: 2px solid #ffffff;
-  background-color: #D1D618;
+  color: #81B8F9;
+  border: 2px solid #81B8F9;
+  background-color: transparent;
   border-radius: 100%;
   cursor: pointer;
   position: fixed;
@@ -2949,4 +2949,20 @@ body {
 
 .dataTables_wrapper {
   max-width: 90vw;
+  margin-top: 30px !important;
+}
+
+.page-content h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.page-content h2 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+.page-content p {
+  margin-bottom: 10px;
 }

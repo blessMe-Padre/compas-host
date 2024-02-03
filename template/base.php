@@ -7,7 +7,7 @@ Template Name: Базовый  - шаблон
 
 <main>
 
-    <section class="page-content py-8 sm:py-16 md:py-32">
+    <section class="page-content py-8 sm:py-16">
         <div class="container">
 
             <?php the_content(); ?>
