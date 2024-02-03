@@ -11,8 +11,8 @@ get_header();
         <div class="breadcrums py-7">
             <ul class="flex gap-3">
                 <li><a class="text-xs text-light-gray" href="/">Главная ></a></li>
-                <li><a class="text-xs text-light-gray" href="#">Каталог ></a></li>
-                <li><span class="text-xs " href="#">Кабинезон «Блиц-2» серый с красным</span></li>
+                <li><a class="text-xs text-light-gray" href="/category">Каталог ></a></li>
+                <li><span class="text-xs " href="#"><?php the_title();?></span></li>
             </ul>
         </div>
 
@@ -115,7 +115,10 @@ get_header();
                             свяжемся с вами в ближайшее время</p>
                     </div>
                     <div class="form-wrapper">
-                        <form action="#" id="form" class="form validate-form flex-col">
+                        <?php echo do_shortcode('[contact-form-7 id="4f96066" title="Оформить заказ"]');?>
+                        <!-- <form action="#" id="form" class="form validate-form flex-col">
+                            <input type="hidden" value="<?php the_title();?>">
+
                             <div class="form__item">
                                 <input id="formName" type="text" name="name" class="form__input _req w-full"
                                     placeholder="Ваше имя">
@@ -138,7 +141,7 @@ get_header();
                                     заявку</span>
                                 <span class="text-lg text-blue-2 uppercase font-semibold">]</span>
                             </button>
-                        </form>
+                        </form> -->
                     </div>
                     <p class="form-section__descriptions w-full">Нажимая кнопку “отправить заявку” вы даёте
                         согласие на <a class="underline" href="#" target="_blank" rel="noopener noreferrer">обработку

@@ -6,6 +6,7 @@ import { initScroll } from "./module/scroll.js";
 import { initAccordionMenu } from "./module/accordion-menu.js";
 import { initCardSlider } from "./module/card-slider.js";
 import { initPopup } from "./module/popup.js";
+import { initHiddenInput } from "./module/hidden-input.js";
 
 window.addEventListener('DOMContentLoaded', () => {
     console.log('подключен скрипт main.js');
@@ -19,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initAccordionMenu();
     initCardSlider();
     initPopup();
+    initHiddenInput();
 
     // DOMContentLoaded
 });

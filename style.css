@@ -2966,3 +2966,17 @@ body {
 .page-content p {
   margin-bottom: 10px;
 }
+
+.button-submit p {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+
+.wpcf7-spinner {
+  position: absolute;
+  top: 2px;
+  left: 120px;
+}
