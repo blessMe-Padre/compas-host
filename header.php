@@ -19,24 +19,18 @@
                     <div class="header-logo">
                         <?php the_custom_logo(); ?>
                     </div>
-                    <!-- <form action="#" class="header-search-form hidden md:flex">
-                        <button>
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-search.svg"
-                                height="22" width="22" alt="search">
-                        </button>
-                        <input type="text" placeholder="Поиск">
-                    </form> -->
                     <?php get_search_form(); ?>
 
                     <div class="flex flex-col sm:gap-2">
-                        <div class="flex flex-wrap items-center justify-between sm:items-end sm:gap-2 md:justify-end">
+                        <div
+                            class="flex flex-wrap items-center justify-end sm:justify-between sm:items-end sm:gap-2 md:justify-end">
                             <div class="flex items-center justify-center gap-2">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-phone.svg"
                                     width="22" height="22" alt="phone">
                                 <a class="text-[8px] sm:text-base md:text-2xl font-medium text-dark-blue"
                                     href="tel:+84232641409">8 (423) 264-14-09</a>
                             </div>
-                            <div class="flex items-center justify-center gap-2">
+                            <div class="flex items-center justify-center sm:justify-between gap-2">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-point.svg"
                                     width="6" height="6" alt="point">
                                 <a class="text-[8px] sm:text-base md:text-2xl font-medium text-dark-blue"
@@ -83,13 +77,6 @@
                         ?>
 
                         <div class="header-form-mobile-wrapper">
-                            <!-- <form action="#">
-                                <button>
-                                    <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-search.svg"
-                                        height="22" width="22" alt="search">
-                                </button>
-                                <input class="w-full" type="text" placeholder="Поиск">
-                            </form> -->
                             <?php get_search_form(); ?>
                         </div>
                     </nav>
