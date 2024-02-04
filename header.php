@@ -23,7 +23,7 @@
 
                     <div class="flex flex-col sm:gap-2">
                         <div
-                            class="flex flex-wrap items-center justify-end sm:justify-between sm:items-end sm:gap-2 md:justify-end">
+                            class="flex flex-wrap items-center justify-end sm:justify-between sm:items-end gap-2 md:justify-end">
                             <div class="flex items-center justify-center gap-2">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-phone.svg"
                                     width="22" height="22" alt="phone">

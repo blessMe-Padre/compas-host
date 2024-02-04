@@ -17,7 +17,7 @@ Template Name: Полезное- шаблон
 
         <div class="grid sm:grid-cols-2 gap-8 mb-20 sm:mb-40">
             <a class="flex flex-col sm:flex-row items-center justify-between gap-5 py-3 px-4 sm:px-9 bg-light-gray-2"
-                href="#">
+                href="/informaciya/tablicy-razmerov-obuvi/">
                 <p class="text-base sm:text-2xl font-bold">
                     <span class="text-blue">[</span>
                     Таблицы размеров обуви
@@ -27,7 +27,7 @@ Template Name: Полезное- шаблон
                     alt="image">
             </a>
             <a class="flex flex-col sm:flex-row items-center justify-between gap-5 py-3 px-4 sm:px-9 bg-light-gray-2"
-                href="#">
+                href="/informaciya/pravila-uxoda-za-specodezhdoj/">
                 <p class="text-base sm:text-2xl font-bold">
                     <span class="text-blue">[</span>
                     Таблица по уходу за одеждой
