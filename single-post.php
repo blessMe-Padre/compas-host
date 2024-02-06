@@ -12,7 +12,9 @@ get_header();
             <ul class="flex gap-3">
                 <li><a class="text-xs text-light-gray" href="/">Главная ></a></li>
                 <li><a class="text-xs text-light-gray" href="/category">Каталог ></a></li>
-                <li><span class="text-xs " href="#"><?php the_title();?></span></li>
+                <li><span class="text-xs " href="#">
+                        <?php the_title(); ?>
+                    </span></li>
             </ul>
         </div>
 
@@ -65,22 +67,28 @@ get_header();
 
                     <ul class="card__descriptions-list">
                         <li>
-                            <div class="card__descriptions-item"><strong>Цвет</strong></div>
-                            <span class="card__descriptions-item text-gray">Серый с красным</span>
+                            <div class="card__descriptions-item"><strong>
+                                    <?= get_field("attribute_1"); ?>
+                                </strong></div>
+                            <span class="card__descriptions-item text-gray">
+                                <?= get_field("attribute_1_value"); ?>
+                            </span>
                         </li>
                         <li>
-                            <div class="card__descriptions-item"><strong>Размер</strong></div>
-                            <span class="card__descriptions-item text-gray">с 44-46 по 120–124 (170-176,
-                                182-188)</span>
+                            <div class="card__descriptions-item"><strong>
+                                    <?= get_field("attribute_2"); ?>
+                                </strong></div>
+                            <span class="card__descriptions-item text-gray">
+                                <?= get_field("attribute_2_value"); ?>
+                            </span>
                         </li>
                         <li>
-                            <div class="card__descriptions-item"><strong>Ткань</strong></div>
-                            <span class="card__descriptions-item text-gray">смесовая Твил 240г/м2, 65% Пэ, 35%
-                                Х/б, ВО</span>
-                        </li>
-                        <li>
-                            <div class="card__descriptions-item"><strong>Защитные свойства</strong></div>
-                            <span class="card__descriptions-item text-gray">Ми, З</span>
+                            <div class="card__descriptions-item"><strong>
+                                    <?= get_field("attribute_3"); ?>
+                                </strong></div>
+                            <span class="card__descriptions-item text-gray">
+                                <?= get_field("attribute_3_value"); ?>
+                            </span>
                         </li>
                     </ul>
 
@@ -115,9 +123,9 @@ get_header();
                             свяжемся с вами в ближайшее время</p>
                     </div>
                     <div class="form-wrapper">
-                        <?php echo do_shortcode('[contact-form-7 id="4f96066" title="Оформить заказ"]');?>
+                        <?php echo do_shortcode('[contact-form-7 id="4f96066" title="Оформить заказ"]'); ?>
                         <!-- <form action="#" id="form" class="form validate-form flex-col">
-                            <input type="hidden" value="<?php the_title();?>">
+                            <input type="hidden" value="<?php the_title(); ?>">
 
                             <div class="form__item">
                                 <input id="formName" type="text" name="name" class="form__input _req w-full"
