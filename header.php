@@ -37,6 +37,7 @@
                             <div class="flex items-center justify-center gap-2">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-phone.svg"
                                     width="22" height="22" alt="phone">
+
                                 <a class="text-[8px] sm:text-base md:text-2xl font-medium text-dark-blue"
                                     href="tel:<?= get_field("телефон_1_-_для_роботов"); ?>"><?= get_field("телефон_1"); ?></a>
                             </div>

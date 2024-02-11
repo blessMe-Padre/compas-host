@@ -3,6 +3,7 @@ get_header();
 ?>
 
 <main>
+
     <h1 class="visually-hidden">Каталог товаров</h1>
     <div class="container">
         <div class="breadcrums py-7">
@@ -42,31 +43,41 @@ get_header();
                     while (have_posts()) {
                         the_post();
                         ?>
-                        <li class="catalog__content-item" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-                            <div>
-                                <div class="py-4 px-7">
-                                    <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
-                                        height="600" alt="новинка">
-                                </div>
-                                <p class="text-xs sm:text-lg text-gray pb-3">
-                                    <?php the_title(); ?>
-                                </p>
-                            </div>
-                            <a class="flex items-center justify-between gap-3 catalog__content-link"
-                                href="<?php the_permalink(); ?>">
-                                <span class="text-base sm:text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
-                                    height="21" alt="заказать">
-                            </a>
-                        </li>
-                        <?php
+                <li class="catalog__content-item" <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                    <div>
+                        <div class="py-4 px-7">
+                            <?php
+                                        $photos = get_field('product_img');
+                                        if ($photos) {
+                                            $first_photo = reset($photos); // Получаем первое изображение
+                                            echo '<img class="object-cover max-height" src="' . esc_url($first_photo['url']) . '" alt="" >';
+                                        } else {
+                                            echo '<img src="' . get_template_directory_uri() . '/src/img/no-found.jpg"
+                                width="230"
+                                height="260" alt="image">';
+
+                            }
+                            ?>
+                        </div>
+                        <p class="text-xs sm:text-lg text-gray pb-3">
+                            <?php the_title(); ?>
+                        </p>
+                    </div>
+                    <a class="flex items-center justify-between gap-3 catalog__content-link"
+                        href="<?php the_permalink(); ?>">
+                        <span class="text-base sm:text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
+                        <img src="<?php echo get_template_directory_uri() ?>/src/img/arrow-right.svg" width="19"
+                            height="21" alt="заказать">
+                    </a>
+                </li>
+                <?php
                     }
                     ?>
-                </ul>
+            </ul>
 
-            </div>
-            <div class="navigation">
-                <?php
+        </div>
+        <div class="navigation">
+            <?php
                 global $wp_query;
 
                 $big = 999999999; // нужно большое число
@@ -83,8 +94,8 @@ get_header();
                     )
                 );
                 ?>
-            </div>
-            <?php
+        </div>
+        <?php
                 }
                 // постов нет
                 else {

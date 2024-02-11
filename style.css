@@ -3013,3 +3013,8 @@ body {
   text-align: center;
   font-size: 12px;
 }
+
+.max-height {
+  min-height: 190px;
+  max-height: 320px;
+}
