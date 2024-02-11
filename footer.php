@@ -44,9 +44,9 @@
                 <ul class="footer__list-contact">
                     <li class="footer__item footer__item--1">
                         <a class="link"
-                            href="tel:<?= get_field("телефон_1_-_для_роботов"); ?>"><?= get_field("телефон_1"); ?></a>
+                            href="tel:<?= get_field("телефон_1_-_для_роботов", "option"); ?>"><?= get_field("телефон_1", "option"); ?></a>
                         <a class="link"
-                            href="tel:<?= get_field("телефон_2_-_для_роботов"); ?>"><?= get_field("телефон_2"); ?></a>
+                            href="tel:<?= get_field("телефон_2_-_для_роботов", "option"); ?>"><?= get_field("телефон_2", "option"); ?></a>
                     </li>
                     <li class="footer__item footer__item--2">
                         <p>г. Владивосток, ул. Фадеева, 45 а</p>
