@@ -3005,3 +3005,11 @@ body {
   top: 2px;
   left: 120px;
 }
+
+.alert {
+  padding: 10px 0;
+  background-color: #4466B6;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+}
