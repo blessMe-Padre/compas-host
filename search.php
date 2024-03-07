@@ -19,12 +19,12 @@ get_header();
 
             <ul class="search-list">
                 <?php if (have_posts()): ?>
-                    <?php while (have_posts()):
+                <?php while (have_posts()):
                         the_post(); ?>
-                        <li class="search-item new-item">
-                            <div>
-                                <div class="py-4 px-7">
-                                    <?php
+                <li class="search-item new-item">
+                    <div>
+                        <div class="py-4 px-7">
+                            <?php
                                     // Получаем изображения продукта
                                     $photos = get_field('product_img');
                                     if ($photos) {
@@ -32,23 +32,24 @@ get_header();
                                         $first_photo = reset($photos); // Получаем первое изображение
                                         echo '<img class="object-cover" src="' . esc_url($first_photo['url']) . '" alt="">';
                                     } else {
-                                        // Если изображений нет, выводим сообщение
-                                        echo 'Изображение не найдено.';
-                                    }
+                                        echo '<img src="' . get_template_directory_uri() . '/src/img/no-found.jpg"
+                            width="230"
+                            height="260" alt="image">';
+                        }
                                     ?>
-                                </div>
-                                <p class="text-xs sm:text-lg text-gray pb-3">
-                                    <?php the_title(); // Выводим заголовок поста ?>
-                                </p>
-                            </div>
-                            <a class="flex items-center justify-between gap-3 new-item-link"
-                                href="<?php the_permalink(); // Ссылка на полный пост ?>">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                            </a>
-                        </li>
-                    <?php endwhile; ?>
+                        </div>
+                        <p class="text-xs sm:text-lg text-gray pb-3">
+                            <?php the_title(); // Выводим заголовок поста ?>
+                        </p>
+                    </div>
+                    <a class="flex items-center justify-between gap-3 new-item-link"
+                        href="<?php the_permalink(); // Ссылка на полный пост ?>">
+                        <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
+                    </a>
+                </li>
+                <?php endwhile; ?>
                 <?php else: ?>
-                    <p>По вашему запросу ничего не найдено.</p>
+                <p>По вашему запросу ничего не найдено.</p>
                 <?php endif; ?>
             </ul>
             <div class="navigation">

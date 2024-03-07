@@ -43,8 +43,10 @@
                 <h3 class="font-bold uppercase mb-5">Контакты</h3>
                 <ul class="footer__list-contact">
                     <li class="footer__item footer__item--1">
-                        <a class="link" href="tel:+84232641409">8 (423) 264-14-09</a>
-                        <a class="link" href="tel:+84232641635">8 (423) 264-16-35</a>
+                        <a class="link"
+                            href="tel:<?= get_field("телефон_1_-_для_роботов", "option"); ?>"><?= get_field("телефон_1", "option"); ?></a>
+                        <a class="link"
+                            href="tel:<?= get_field("телефон_2_-_для_роботов", "option"); ?>"><?= get_field("телефон_2", "option"); ?></a>
                     </li>
                     <li class="footer__item footer__item--2">
                         <p>г. Владивосток, ул. Фадеева, 45 а</p>

@@ -48,4 +48,16 @@ function add_menu()
     register_nav_menu('footer-menu', 'футер-меню');
     register_nav_menu('side-bar-menu', 'сайдбар меню');
 }
+
+if( function_exists('acf_add_options_page') ) {
+
+    acf_add_options_page(array(
+    'page_title' => 'Настройки сайта',
+    'menu_title' => 'Настройки сайта',
+    'menu_slug' => 'theme-general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+    ));
+
+    }
 ?>

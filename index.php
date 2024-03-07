@@ -29,24 +29,24 @@ get_header();
                     $category_name = $category->name; // Получаем название категории
                     ?>
 
-                    <li class="catalog__item">
-                        <a href="<?php echo esc_url($category_link); ?>">
-                            <div class="catalog__img">
-                                <!-- Здесь можно добавить изображение для категории, если оно есть -->
-                                <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                    height="260" alt="image">
-                            </div>
-                            <div class="catalog__item-wrapper">
-                                <span>[</span>
-                                <p class="text-sm sm:text-lg">
-                                    <?php echo esc_html($category_name); ?>
-                                </p>
-                                <span>]</span>
-                            </div>
-                        </a>
-                    </li>
+                <li class="catalog__item">
+                    <a href="<?php echo esc_url($category_link); ?>">
+                        <div class="catalog__img">
+                            <!-- Здесь можно добавить изображение для категории, если оно есть -->
+                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
+                                height="260" alt="image">
+                        </div>
+                        <div class="catalog__item-wrapper">
+                            <span>[</span>
+                            <p class="text-sm sm:text-lg">
+                                <?php echo esc_html($category_name); ?>
+                            </p>
+                            <span>]</span>
+                        </div>
+                    </a>
+                </li>
 
-                    <?php
+                <?php
                 }
                 ?>
 
@@ -84,10 +84,10 @@ get_header();
                             setup_postdata($post);
                             ?>
 
-                            <div class="swiper-slide new-item">
-                                <div>
-                                    <div class="py-4 px-7">
-                                        <?php
+                        <div class="swiper-slide new-item">
+                            <div>
+                                <div class="py-4 px-7">
+                                    <?php
                                         $photos = get_field('product_img');
                                         if ($photos) {
                                             $first_photo = reset($photos); // Получаем первое изображение
@@ -96,19 +96,19 @@ get_header();
                                             echo 'No photos found.';
                                         }
                                         ?>
-                                        <!-- <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
+                                    <!-- <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
                                             height="600" alt="новинка"> -->
-                                    </div>
-                                    <p class="text-xs sm:text-lg text-gray pb-3">
-                                        <?php the_title(); ?>
-                                    </p>
                                 </div>
-                                <a class="flex items-center justify-between gap-3 new-item-link"
-                                    href="<?php the_permalink(); ?>">
-                                    <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                                </a>
+                                <p class="text-xs sm:text-lg text-gray pb-3">
+                                    <?php the_title(); ?>
+                                </p>
                             </div>
-                            <?php
+                            <a class="flex items-center justify-between gap-3 new-item-link"
+                                href="<?php the_permalink(); ?>">
+                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
+                            </a>
+                        </div>
+                        <?php
                         }
                         wp_reset_postdata();
                         ?>
@@ -139,8 +139,10 @@ get_header();
                     <span class="text-blue-2">]</span>
                 </div>
                 <div class="mb-8">
-                    <a class="link text-lg sm:text-2xl block" href="tel:+74232641409">8 (423) 264-14-09</a>
-                    <a class="link text-lg sm:text-2xl block" href="tel:+74232641635">8 (423) 264-16-35</a>
+                    <a class="link text-lg sm:text-2xl block"
+                        href="tel:<?= get_field("телефон_1_-_для_роботов"); ?>"><?= get_field("телефон_1"); ?></a>
+                    <a class="link text-lg sm:text-2xl block"
+                        href="tel:<?= get_field("телефон_2_-_для_роботов"); ?>"><?= get_field("телефон_2"); ?></a>
                 </div>
 
                 <div class="flex gap-2 text-lg sm:text-2xl mb-5">
