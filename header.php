@@ -12,6 +12,16 @@
 
 <body>
     <div class="h-screen grid grid-rows-[auto_1fr_auto] wrapper">
+        <div class="alert">
+            <p class="alert__text">
+                В настоящее время сайт находится в стадии активной разработки. В ходе работы мы совершенствуем
+                функционал сайта, добавляем новые возможности и оптимизируем работу существующих сервисов.<br>
+
+                В ближайшее время планируется значительное расширение ассортимента предлагаемых услуг, улучшение
+                дизайна и юзабилити сайта, а также внедрение современных технологий и инструментов для более удобного и
+                комфортного использования ресурса.
+            </p>
+        </div>
         <header class="z-10 w-full md-28 transition-colors">
             <div class="container">
 
@@ -27,14 +37,19 @@
                             <div class="flex items-center justify-center gap-2">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-phone.svg"
                                     width="22" height="22" alt="phone">
+
                                 <a class="text-[8px] sm:text-base md:text-2xl font-medium text-dark-blue"
-                                    href="tel:+84232641409">8 (423) 264-14-09</a>
+                                    href="tel:<?= get_field("телефон_1_-_для_роботов", "option"); ?>">
+                                    <?= get_field("телефон_1", "option"); ?>
+                                </a>
                             </div>
                             <div class="flex items-center justify-center sm:justify-between gap-2">
                                 <img src="<?php echo get_template_directory_uri() ?>/src/img/icons/icon-point.svg"
                                     width="6" height="6" alt="point">
                                 <a class="text-[8px] sm:text-base md:text-2xl font-medium text-dark-blue"
-                                    href="tel:+84232641635">8 (423) 264-16-35</a>
+                                    href="tel:<?= get_field("телефон_2_-_для_роботов", "option"); ?>">
+                                    <?= get_field("телефон_2", "option"); ?>
+                                </a>
                             </div>
                         </div>
                         <div class="flex flex-wrap items-center justify-end sm:justify-center md:justify-end sm:gap-2">
@@ -97,7 +112,7 @@
                             <?php wp_nav_menu([
                                 'theme_location' => 'catalog-menu',
                                 'container' => '',
-                                'menu_class' => '',
+                                'menu_class' => 'menu',
                                 'menu_id' => ''
                             ]);
                             ?>
