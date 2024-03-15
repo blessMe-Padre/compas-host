@@ -29,24 +29,24 @@ get_header();
                     $category_name = $category->name; // Получаем название категории
                     ?>
 
-                <li class="catalog__item">
-                    <a href="<?php echo esc_url($category_link); ?>">
-                        <div class="catalog__img">
-                            <!-- Здесь можно добавить изображение для категории, если оно есть -->
-                            <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
-                                height="260" alt="image">
-                        </div>
-                        <div class="catalog__item-wrapper">
-                            <span>[</span>
-                            <p class="text-sm sm:text-lg">
-                                <?php echo esc_html($category_name); ?>
-                            </p>
-                            <span>]</span>
-                        </div>
-                    </a>
-                </li>
+                            <li class="catalog__item">
+                                <a href="<?php echo esc_url($category_link); ?>">
+                                    <div class="catalog__img">
+                                        <!-- Здесь можно добавить изображение для категории, если оно есть -->
+                                        <img src="<?php echo get_template_directory_uri() ?>/src/img/product.png" width="230"
+                                            height="260" alt="image">
+                                    </div>
+                                    <div class="catalog__item-wrapper">
+                                        <span>[</span>
+                                        <p class="text-sm sm:text-lg">
+                                            <?php echo esc_html($category_name); ?>
+                                        </p>
+                                        <span>]</span>
+                                    </div>
+                                </a>
+                            </li>
 
-                <?php
+                            <?php
                 }
                 ?>
 
@@ -84,31 +84,31 @@ get_header();
                             setup_postdata($post);
                             ?>
 
-                        <div class="swiper-slide new-item">
-                            <div>
-                                <div class="py-4 px-7">
-                                    <?php
-                                        $photos = get_field('product_img');
-                                        if ($photos) {
-                                            $first_photo = reset($photos); // Получаем первое изображение
-                                            echo '<img class="object-cover" src="' . esc_url($first_photo['url']) . '" alt="">';
-                                        } else {
-                                            echo 'No photos found.';
-                                        }
-                                        ?>
-                                    <!-- <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
+                                    <div class="swiper-slide new-item">
+                                        <div>
+                                            <div class="py-4 px-7">
+                                                <?php
+                                                $photos = get_field('product_img');
+                                                if ($photos) {
+                                                    $first_photo = reset($photos); // Получаем первое изображение
+                                                    echo '<img class="object-cover" src="' . esc_url($first_photo['url']) . '" alt="">';
+                                                } else {
+                                                    echo 'No photos found.';
+                                                }
+                                                ?>
+                                                <!-- <img src="<?php echo get_template_directory_uri() ?>/src/img/new.png" width="480"
                                             height="600" alt="новинка"> -->
-                                </div>
-                                <p class="text-xs sm:text-lg text-gray pb-3">
-                                    <?php the_title(); ?>
-                                </p>
-                            </div>
-                            <a class="flex items-center justify-between gap-3 new-item-link"
-                                href="<?php the_permalink(); ?>">
-                                <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
-                            </a>
-                        </div>
-                        <?php
+                                            </div>
+                                            <p class="text-xs sm:text-lg text-gray pb-3">
+                                                <?php the_title(); ?>
+                                            </p>
+                                        </div>
+                                        <a class="flex items-center justify-between gap-3 new-item-link"
+                                            href="<?php the_permalink(); ?>">
+                                            <span class="text-lg uppercase font-medium">ЗАКАЗАТЬ</span>
+                                        </a>
+                                    </div>
+                                    <?php
                         }
                         wp_reset_postdata();
                         ?>

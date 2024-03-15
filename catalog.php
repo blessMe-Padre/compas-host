@@ -28,9 +28,12 @@ get_header();
                 $categories = get_categories($args); // Получаем список категорий (дочерних или родительских, в зависимости от текущей категории)
                 
                 foreach ($categories as $category) {
+
+
                     $category_link = get_category_link($category->term_id); // Получаем ссылку на категорию
                     $category_name = $category->name; // Получаем название категории
-                
+                    $term_id = $category->term_id;
+
                     // Проверяем, есть ли у категории дочерние элементы
                     $child_args = array(
                         'parent' => $category->term_id,
@@ -46,11 +49,15 @@ get_header();
 
                     <li class="catalog__item">
                         <a href="<?php echo esc_url($category_link); ?>">
+
                             <div class="catalog__img">
                                 <!-- Место для изображения категории, если оно есть -->
-                                <img src="<?php echo get_template_directory_uri(); ?>/src/img/product.png" width="230"
-                                    height="260" alt="image">
+                                <img src="<?php
+                                $tag_img = get_field('tag_img', 'term_' . $term_id);
+                                echo $tag_img ? $tag_img : get_template_directory_uri() . '/src/img/product.png';
+                                ?>" />
                             </div>
+
                             <div class="catalog__item-wrapper">
                                 <span>[</span>
                                 <p class="text-sm sm:text-lg">
